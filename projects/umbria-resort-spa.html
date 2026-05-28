@@ -132,85 +132,8 @@
 <script src="/DependanceStudio/assets/vendor/pixel-loading/lottie.min.js"></script>
 <script src="/DependanceStudio/assets/vendor/pixel-loading/split-type.min.js"></script>
 
+<script src="/DependanceStudio/js/text-animator.js"></script>
 <script>
-  function initTextAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // ANIMAZIONE TESTI
-    class TextAnimator {
-      constructor(textElement) {
-        if (!textElement || !(textElement instanceof HTMLElement)) {
-          throw new Error('Invalid text element provided.');
-        }
-        this.textElement = textElement;
-        this.splitter = new SplitType(this.textElement, { types: 'words, chars' });
-        this.originalChars = this.splitter.chars.map(char => char.innerHTML);
-        this.originalColors = this.splitter.chars.map(char => getComputedStyle(char).color);
-      }
-
-      animate() {
-        this.reset();
-        this.splitter.chars.forEach((char, position) => {
-          gsap.timeline()
-            .fromTo(char, { opacity: 0 }, {
-              duration: 0.03,
-              opacity: 1,
-              repeat: 3,
-              repeatDelay: 0.1,
-              delay: (position + 1) * 0.08,
-              onRepeat: () => {
-                const randomChar = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-_+=;:,<>';
-                const randomColor = ['#22a3a9', '#4ca922', '#a99222', '#ff8ce7'];
-                char.innerHTML = randomChar[Math.floor(Math.random() * randomChar.length)];
-                char.style.color = randomColor[Math.floor(Math.random() * randomColor.length)];
-              },
-              onComplete: () => {
-                char.innerHTML = this.originalChars[position];
-                char.style.color = this.originalColors[position];
-              }
-            });
-        });
-      }
-
-      reset() {
-        this.splitter.chars.forEach((char, index) => {
-          char.innerHTML = this.originalChars[index];
-          char.style.color = this.originalColors[index];
-        });
-      }
-    }
-
-    const animateText = (animator, delay = 0) => {
-      setTimeout(() => {
-        animator.textElement.style.opacity = 1;
-        animator.animate();
-      }, delay);
-    };
-
-    const observeVisibility = (element, animator, index) => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateText(animator, 0);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0 });
-      observer.observe(element);
-    };
-
-    document.querySelectorAll('.hover-effect').forEach((item, index) => {
-      const animator = new TextAnimator(item);
-
-      // Attiva l'animazione su hover
-      item.addEventListener('mouseenter', () => {
-        animateText(animator);
-      });
-
-      // Attiva l'animazione quando l'elemento entra nella viewport
-      observeVisibility(item, animator, index);
-    });
-  }
 
   // DRAGGABLE + SCROLL-FOR-MORE + PARALLAX - initialize immediately
   document.addEventListener('DOMContentLoaded', () => {

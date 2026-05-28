@@ -183,110 +183,9 @@
 <script src="/DependanceStudio/assets/vendor/pixel-loading/ScrollTrigger.min.js" ></script>
 <script async src="/DependanceStudio/assets/vendor/pixel-loading/pixel.js" ></script>
 <script src="/DependanceStudio/assets/vendor/pixel-loading/split-type.min.js"></script>
+<script src="/DependanceStudio/js/text-animator.js"></script>
 <script>
   // Script per l'animazione del testo
-  function initTextAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-    // Script per l'animazione dei testi
-    class TextAnimator {
-      constructor(textElement) {
-        if (!textElement || !(textElement instanceof HTMLElement)) {
-          throw new Error('Invalid text element provided.');
-        }
-
-        this.textElement = textElement;
-        this.originalChars = [];
-        this.splitText();
-      }
-
-      splitText() {
-        // Usa SplitType già caricato globalmente
-        this.splitter = new SplitType(this.textElement, {
-          types: 'words, chars' 
-        });
-
-        this.originalChars = this.splitter.chars.map(char => char.innerHTML);
-        this.originalColors = this.splitter.chars.map(char => getComputedStyle(char).color);
-      }
-
-      animate() {
-        this.reset();
-        const chars = this.splitter.chars;
-        const colors = ['#22a3a9', '#4ca922', '#a99222', '#1d2619'];
-        const randomChars = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-_+=;:,<>';
-
-        chars.forEach((char, position) => {
-          const initialHTML = char.innerHTML;
-          const initialColor = getComputedStyle(char).color;
-
-          gsap.timeline()
-            .fromTo(char, {
-              opacity: 0,
-              transformOrigin: '50% 0%'
-            }, {
-              duration: 0.03,
-              ease: 'none',
-              repeat: 3,
-                repeatRefresh: true,
-                repeatDelay: 0.1,
-                delay: (position + 1) * 0.08,
-              innerHTML: () => {
-                char.style.color = colors[Math.floor(Math.random() * colors.length)];
-                return randomChars[Math.floor(Math.random() * randomChars.length)];
-              },
-              opacity: 1,
-              onComplete: () => {
-                char.innerHTML = initialHTML;
-                char.style.color = initialColor;
-              }
-            });
-        });
-      }
-
-      reset() {
-        const chars = this.splitter.chars;
-        chars.forEach((char, index) => {
-          gsap.killTweensOf(char);
-          char.innerHTML = this.originalChars[index];
-          char.style.color = this.originalColors[index];
-        });
-      }
-    }
-
-    // Funzione per animare con ritardo
-    const animateText = (animator, delay = 0) => {
-      setTimeout(() => {
-        animator.textElement.style.opacity = 1;
-        animator.animate();
-      }, delay);
-    };
-
-    // Funzione per osservare la visibilità dell'elemento
-    const observeVisibility = (element, animator, index) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateText(animator, 0);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0 }
-      );
-      observer.observe(element);
-    };
-
-    // Applica animazione su tutti gli elementi .hover-effect
-    document.querySelectorAll('.hover-effect').forEach((item, index) => {
-      const animator = new TextAnimator(item);
-      item.addEventListener('mouseenter', () => {
-        animateText(animator);
-      });
-      observeVisibility(item, animator, index);
-    });
-
-  }
 
   // Reveal only non-.hover-effect elements with inline opacity:0
   document.addEventListener('DOMContentLoaded', () => {
@@ -305,19 +204,6 @@
       }
     });
   });
-  // Safety net for non-.hover-effect elements only
-  var revealInterval = setInterval(function() {
-    var done = true;
-    document.querySelectorAll('[style*="opacity:0"]:not(.hover-effect)').forEach(function(el) {
-      if (parseFloat(getComputedStyle(el).opacity) < 0.01) {
-        done = false;
-        el.style.opacity = '1';
-      }
-    });
-    if (done) clearInterval(revealInterval);
-  }, 300);
-  setTimeout(function() { clearInterval(revealInterval); }, 5000);
-
   // Trigger l'inizializzazione delle animazioni di testo al caricamento della pagina
   window.addEventListener('load', () => {
     initTextAnimations();

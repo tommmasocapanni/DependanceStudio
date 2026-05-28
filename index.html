@@ -408,160 +408,29 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="/DependanceStudio/assets/vendor/pixel-loading/mixitup.min.js"></script>
 
 
+<script src="/DependanceStudio/js/text-animator.js"></script>
+<script>window.addEventListener('load', initTextAnimations);</script>
+
 <script>
-  function initTextAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Classe per gestire l'animazione dei testi
-    class TextAnimator {
-      constructor(textElement) {
-        if (!textElement || !(textElement instanceof HTMLElement)) {
-          throw new Error('Invalid text element provided.');
-        }
-
-        this.textElement = textElement;
-        this.originalChars = [];
-        this.splitText();
-      }
-
-      splitText() {
-        // Usa SplitType già caricato
-        this.splitter = new SplitType(this.textElement, {
-          types: 'words, chars', // Dividi in parole e caratteri
-        });
-
-        // Salva le configurazioni originali dei caratteri
-        this.originalChars = this.splitter.chars.map((char) => char.innerHTML);
-        this.originalColors = this.splitter.chars.map((char) => getComputedStyle(char).color);
-      }
-
-      animate() {
-        this.reset(); // Reset prima di ogni animazione
-        const chars = this.splitter.chars;
-
-        chars.forEach((char, position) => {
-          const initialHTML = char.innerHTML; // Contenuto originale
-          const initialColor = getComputedStyle(char).color; // Colore originale
-
-          gsap.timeline()
-            .fromTo(
-              char,
-              {
-                opacity: 0,
-                transformOrigin: '50% 0%', // Punto di trasformazione
-              },
-              {
-                duration: 0.03, // Durata brevissima
-                ease: 'none',
-                repeat: 3, // Ripeti 3 volte
-                repeatRefresh: true,
-                repeatDelay: 0.1, // Piccolo ritardo tra le ripetizioni
-                delay: (position + 1) * 0.08, // Ritardo progressivo
-                innerHTML: () => {
-                  const randomChar = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-_+=;:,<>';
-                  const randomColor = ['#22a3a9', '#4ca922', '#a99222', '#1d2619'];
-                  gsap.set(char, { color: randomColor[Math.floor(Math.random() * randomColor.length)] });
-                  return randomChar[Math.floor(Math.random() * randomChar.length)];
-                },
-                opacity: 1,
-                onComplete: () => {
-                  gsap.set(char, { innerHTML: initialHTML, color: initialColor });
-                },
-              }
-            );
-        });
-      }
-
-      reset() {
-        const chars = this.splitter.chars;
-        chars.forEach((char, index) => {
-          gsap.killTweensOf(char); // Cancella animazioni esistenti
-          char.innerHTML = this.originalChars[index]; // Ripristina contenuto originale
-          char.style.color = this.originalColors[index]; // Ripristina colore originale
-        });
-      }
-    }
-
-    // Funzione per gestire l'animazione con ritardo
-    const animateText = (animator, delay = 0) => {
-      setTimeout(() => {
-        animator.textElement.style.opacity = 1;
-        animator.animate();
-      }, delay);
-    };
-
-    // Funzione per attivare l'animazione quando l'elemento diventa visibile
-    const observeVisibility = (element, animator, index) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const delay = index * 24; // Ritardo progressivo tra gli elementi
-              animateText(animator, delay);
-              observer.unobserve(entry.target); // Rimuovi osservazione per evitare duplicazioni
-            }
-          });
-        },
-        { threshold: 0.1 } // Attiva al 10% di visibilità
-      );
-      observer.observe(element);
-    };
-
-    // Inizializza l'animazione su tutti gli elementi con .hover-effect
-    document.querySelectorAll('.hover-effect').forEach((item, index) => {
-      const animator = new TextAnimator(item);
-
-      // Attiva l'animazione su hover
-      item.addEventListener('mouseenter', () => {
-        animateText(animator);
-      });
-
-      // Attiva l'animazione quando l'elemento entra nella viewport
-      observeVisibility(item, animator, index);
-    });
-  }
-
-  // Aspetta che tutto sia caricato prima di inizializzare le animazioni
-  window.addEventListener('load', () => {
-    // Controlla che le librerie necessarie siano caricate
-    if (typeof SplitType === 'undefined' || typeof gsap === 'undefined') {
-      console.error('Required libraries (SplitType or GSAP) are not loaded.');
-      return;
-    }
-
-    // Assicura che le risorse siano completamente caricate
-    const imagesLoaded = [...document.images].every((img) => img.complete);
-
-    if (!imagesLoaded) {
-      console.warn('Some images are still loading.');
-    }
-
-    initTextAnimations();
-  });
-
 //-------------filtering-------------
 const containerEl = document.querySelector(".cont-work-list");
 
-// Inizializza MixItUp
 if (containerEl) {
   var mixer = mixitup(containerEl, {
      animation: {
-      enable: false // disattiva animazione filtri
+      enable: false
     },
   });
 }
 
 //-------------scroll anchor + active button-------------
-const portfolioSection = document.querySelector("#WORK"); // ID della sezione portfolio
-const buttons = document.querySelectorAll(".li-filter-name"); // tutti i pulsanti filtro
+const portfolioSection = document.querySelector("#WORK");
+const buttons = document.querySelectorAll(".li-filter-name");
 
 buttons.forEach(btn => {
   btn.addEventListener("click", function() {
-    // aggiorna bottone attivo
     buttons.forEach(b => b.classList.remove("active"));
     this.classList.add("active");
-
-    // scrolla verso la sezione portfolio
     if (portfolioSection) {
       portfolioSection.scrollIntoView({
         behavior: "smooth",
@@ -570,11 +439,7 @@ buttons.forEach(btn => {
     }
   });
 });
-
-
-
 </script>
-
 
 <script>
 // Dynamic content from admin - loads site-data.json and updates text
