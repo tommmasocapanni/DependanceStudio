@@ -176,13 +176,13 @@ background-color: #c8c8c8;
   }
 }@font-face {
   font-family: Cinema;
-  src: url("/assets/media/66ed53eccbc111dc94458404_Cinema.otf") format("opentype");
+  src: url("/DependanceStudio/assets/media/66ed53eccbc111dc94458404_Cinema.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }@font-face {
   font-family: Ppmondwest;
-  src: url("/assets/media/67163b5156d92c42b47b6056_PPMondwest Regular.otf") format("opentype");
+  src: url("/DependanceStudio/assets/media/67163b5156d92c42b47b6056_PPMondwest Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1375,7 +1375,7 @@ flex-flow: column;
 }
 .rectangle-7 {
 object-fit: cover;
-  background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+  background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-size: cover;
   border-radius: 4px;
@@ -1386,7 +1386,7 @@ object-fit: cover;
   display: flex;
 }
 .rectangle-7.parallax-image {
-background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1395,19 +1395,19 @@ background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
 }
 .rectangle-7.parallax-image.immo {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745ade78084b0f29c02cf9d_project-details.webp");
+  background-image: url("/DependanceStudio/assets/media/6745ade78084b0f29c02cf9d_project-details.webp");
 }
 .rectangle-7.parallax-image.immo.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image._3 {
-background-image: url("/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
+background-image: url("/DependanceStudio/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
 }
 .rectangle-7.parallax-image.no-img {
 background-image: none;
 }
 .rectangle-7.parallax-image.regal {
-background-image: url("/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
+background-image: url("/DependanceStudio/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
 }
 .rectangle-7.parallax-image.lottie-cont {
 background-image: none;
@@ -1415,103 +1415,103 @@ background-image: none;
 }
 .rectangle-7.parallax-image.charta {
 filter: contrast(96%) brightness(128%);
-  background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+  background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
   background-size: auto 110%;
 }
 .rectangle-7.parallax-image.charta-2 {
-background-image: url("/assets/media/673b79d682c2ed23f79c5563_charta-sotterranei_1.webp");
+background-image: url("/DependanceStudio/assets/media/673b79d682c2ed23f79c5563_charta-sotterranei_1.webp");
 }
 .rectangle-7.parallax-image.immo2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745ade79c8562bd42795d2c_all-property.webp");
+  background-image: url("/DependanceStudio/assets/media/6745ade79c8562bd42795d2c_all-property.webp");
 }
 .rectangle-7.parallax-image.immo2.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.immo3 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745b8070ffbb4e11ea55c61_parla-con-noi.webp");
+  background-image: url("/DependanceStudio/assets/media/6745b8070ffbb4e11ea55c61_parla-con-noi.webp");
 }
 .rectangle-7.parallax-image.immo3.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.immo4 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745ade707f93691327398ed_chi-siamo.webp");
+  background-image: url("/DependanceStudio/assets/media/6745ade707f93691327398ed_chi-siamo.webp");
 }
 .rectangle-7.parallax-image.immo4.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.immo---hero {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745b807711db092819fbc01_hero.webp");
+  background-image: url("/DependanceStudio/assets/media/6745b807711db092819fbc01_hero.webp");
 }
 .rectangle-7.parallax-image.immo---hero.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.immo--details {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745b809fd48bd81c2f55a6a_detail-view-components.webp");
+  background-image: url("/DependanceStudio/assets/media/6745b809fd48bd81c2f55a6a_detail-view-components.webp");
 }
 .rectangle-7.parallax-image.immo--details.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.immo---product {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745b807a4fc177a69fe59b5_detail-view.webp");
+  background-image: url("/DependanceStudio/assets/media/6745b807a4fc177a69fe59b5_detail-view.webp");
 }
 .rectangle-7.parallax-image.immo---product.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.umbria---hero {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96bc0d2ae8cd0b2579a_foglie.webp");
+  background-image: url("/DependanceStudio/assets/media/6745e96bc0d2ae8cd0b2579a_foglie.webp");
 }
 .rectangle-7.parallax-image.umbria---hero.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.umbria-1 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+  background-image: url("/DependanceStudio/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
 }
 .rectangle-7.parallax-image.umbria-1.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.umbria-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96d503b574d4b7e9e81_sistemazioni.webp");
+  background-image: url("/DependanceStudio/assets/media/6745e96d503b574d4b7e9e81_sistemazioni.webp");
 }
 .rectangle-7.parallax-image.umbria-2.charta-pics {
-background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
+background-image: url("/DependanceStudio/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.omis {
-background-image: url("/assets/media/671b90dd267e7b417d933153_Omis extended 2048x1152.webp");
+background-image: url("/DependanceStudio/assets/media/671b90dd267e7b417d933153_Omis extended 2048x1152.webp");
 }
 .rectangle-7.parallax-image.spooky-1 {
-background-image: url("/assets/media/67470720af36853f65dd7378_Ingrandimento Immagine 1920x1440.webp");
+background-image: url("/DependanceStudio/assets/media/67470720af36853f65dd7378_Ingrandimento Immagine 1920x1440.webp");
 }
 .rectangle-7.parallax-image.spooky-1._3-2 {
 aspect-ratio: 3 / 2;
 }
 .rectangle-7.parallax-image.spooky-2 {
-background-image: url("/assets/media/674707558f3914224c4e599d_Shots 2x (2).webp");
+background-image: url("/DependanceStudio/assets/media/674707558f3914224c4e599d_Shots 2x (2).webp");
 }
 .rectangle-7.parallax-image.spooky-2._3-2 {
 aspect-ratio: 3 / 2;
 }
 .rectangle-7.parallax-image.spooky-3 {
-background-image: url("/assets/media/6747079d71f0c666d167973d_about.webp");
+background-image: url("/DependanceStudio/assets/media/6747079d71f0c666d167973d_about.webp");
 }
 .rectangle-7.parallax-image.spooky-3.bg-pos {
 background-position: 0%;
 }
 .rectangle-7.parallax-image.spooky-3.bg-pos._3-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6747087d8a26a1778c264d5b_Shots 2x (8).webp");
+  background-image: url("/DependanceStudio/assets/media/6747087d8a26a1778c264d5b_Shots 2x (8).webp");
   background-position: 50%;
 }
 .rectangle-7.parallax-image.spooky-4 {
-background-image: url("/assets/media/6747079d71f0c666d167973d_about.webp");
+background-image: url("/DependanceStudio/assets/media/6747079d71f0c666d167973d_about.webp");
 }
 .rectangle-7.parallax-image.spooky-4.bg-pos {
 background-position: 0%;
@@ -1521,24 +1521,24 @@ aspect-ratio: 3 / 2;
   background-position: 0%;
 }
 .rectangle-7.parallax-image.spooky-5 {
-background-image: url("/assets/media/674708ce2a1a5f41049d4e77_Shots 2x (7).webp");
+background-image: url("/DependanceStudio/assets/media/674708ce2a1a5f41049d4e77_Shots 2x (7).webp");
 }
 .rectangle-7.parallax-image.spooky-5.bg-pos {
 background-position: 0%;
 }
 .rectangle-7.parallax-image.spooky-5.bg-pos._3-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6747087d8a26a1778c264d5b_Shots 2x (8).webp");
+  background-image: url("/DependanceStudio/assets/media/6747087d8a26a1778c264d5b_Shots 2x (8).webp");
 }
 .rectangle-7.parallax-image.spooky-5._3-2 {
 aspect-ratio: 3 / 2;
 }
 .rectangle-7.parallax-image.spooky-hero2 {
-background-image: url("/assets/media/67470720af36853f65dd7378_Ingrandimento Immagine 1920x1440.webp");
+background-image: url("/DependanceStudio/assets/media/67470720af36853f65dd7378_Ingrandimento Immagine 1920x1440.webp");
 }
 .rectangle-7.parallax-image.spooky-hero2._3-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/67470c3abf2186e9834cce17_hero#2.webp");
+  background-image: url("/DependanceStudio/assets/media/67470c3abf2186e9834cce17_hero#2.webp");
   background-size: 108%;
 }
 .card-work-4 {
@@ -1787,7 +1787,7 @@ z-index: 1;
   width: 100%;
   height: var(--altezza-card-shown);
   min-height: var(--altezza-card-shown);
-  background-image: url("/assets/media/6717c94faa2fc79a9e704848_Diffusers Image Outpaint.webp");
+  background-image: url("/DependanceStudio/assets/media/6717c94faa2fc79a9e704848_Diffusers Image Outpaint.webp");
   background-position: 50%;
   background-size: cover;
   min-width: 100%;
@@ -1799,32 +1799,32 @@ z-index: 1;
   right: 0;
 }
 .content.big-show.lpm {
-background-image: url("/assets/media/671b7ec2a8b0dc076b06837f_Squoosh Oct 25 screenshot.webp");
+background-image: url("/DependanceStudio/assets/media/671b7ec2a8b0dc076b06837f_Squoosh Oct 25 screenshot.webp");
 }
 .content.big-show.spooky {
-background-image: url("/assets/media/6747079d71f0c666d167973d_about.webp");
+background-image: url("/DependanceStudio/assets/media/6747079d71f0c666d167973d_about.webp");
 }
 .content.big-show.umbria {
-background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+background-image: url("/DependanceStudio/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
 }
 .content.big-show.omis {
-background-image: url("/assets/media/67460518eb4f082b63d9b0f0_OmisElegia_FrontWhite.webp");
+background-image: url("/DependanceStudio/assets/media/67460518eb4f082b63d9b0f0_OmisElegia_FrontWhite.webp");
 }
 .content.big-show.videocitta {
-background-image: url("/assets/media/671b7a77117978594675fcd4_Screenshot Oct 25 from Squoosh.webp");
+background-image: url("/DependanceStudio/assets/media/671b7a77117978594675fcd4_Screenshot Oct 25 from Squoosh.webp");
 }
 .content.big-show.muretto {
-background-image: url("/assets/media/673f1bca0767eb6efc8f7332_Dhavv Muretto Thumbnail.webp");
+background-image: url("/DependanceStudio/assets/media/673f1bca0767eb6efc8f7332_Dhavv Muretto Thumbnail.webp");
 }
 .content.big-show.immobiliare {
-background-image: url("/assets/media/6745b807a4fc177a69fe59b5_detail-view.webp");
+background-image: url("/DependanceStudio/assets/media/6745b807a4fc177a69fe59b5_detail-view.webp");
   background-position: 50% 0;
 }
 .content.big-show.yogurt {
-background-image: url("/assets/media/67128c2cc7fa9d645d9436ff_DSC06997-3.png");
+background-image: url("/DependanceStudio/assets/media/67128c2cc7fa9d645d9436ff_DSC06997-3.png");
 }
 .content.big-show.cgm {
-background-image: url("/assets/media/671b7b88603730ace760fd5a_Foresta2.webp");
+background-image: url("/DependanceStudio/assets/media/671b7b88603730ace760fd5a_Foresta2.webp");
   background-size: cover;
 }
 .content.service {
@@ -1990,7 +1990,7 @@ flex: 0 auto;
   min-height: 100%;
 }
 .cover2.regal {
-background-image: url("/assets/media/6717c94faa2fc79a9e704848_Diffusers Image Outpaint.webp");
+background-image: url("/DependanceStudio/assets/media/6717c94faa2fc79a9e704848_Diffusers Image Outpaint.webp");
   background-position: 50%;
   background-size: cover;
 }
@@ -2007,12 +2007,12 @@ z-index: 0;
   position: relative;
 }
 .cover2.umbria {
-background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+background-image: url("/DependanceStudio/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
   background-position: 50%;
   background-size: cover;
 }
 .cover2.omis {
-background-image: url("/assets/media/671b90dd267e7b417d933153_Omis extended 2048x1152.webp");
+background-image: url("/DependanceStudio/assets/media/671b90dd267e7b417d933153_Omis extended 2048x1152.webp");
   background-position: 50%;
   background-size: cover;
 }
@@ -2159,7 +2159,7 @@ aspect-ratio: auto;
   overflow: clip;
 }
 .cont-mini-video.parallax-image {
-background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2167,10 +2167,10 @@ background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   min-height: 52svh;
 }
 .cont-mini-video.parallax-image._2 {
-background-image: url("/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
+background-image: url("/DependanceStudio/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
 }
 .cont-mini-video.parallax-image._3 {
-background-image: url("/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
+background-image: url("/DependanceStudio/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
 }
 .cont-mini-video.parallax-image.no-img {
 background-image: none;
@@ -2180,7 +2180,7 @@ height: 52svh;
 }
 .cont-mini-video.immo._3-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745bca0a0e657db078b1a52_Home Bagna 3000x2000.webp");
+  background-image: url("/DependanceStudio/assets/media/6745bca0a0e657db078b1a52_Home Bagna 3000x2000.webp");
   background-position: 50%;
   background-size: cover;
   justify-content: center;
@@ -2191,7 +2191,7 @@ aspect-ratio: 3 / 2;
 }
 .cont-mini-video.umbria._3-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745eeb5a3672cd54ec7edd5_Foglie verdi di giorno.webp");
+  background-image: url("/DependanceStudio/assets/media/6745eeb5a3672cd54ec7edd5_Foglie verdi di giorno.webp");
   background-position: 50%;
   background-size: cover;
   justify-content: center;
@@ -2323,7 +2323,7 @@ object-fit: cover;
   display: flex;
 }
 .double-quad.parallax-image {
-background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2331,16 +2331,16 @@ background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   min-height: 52svh;
 }
 .double-quad.parallax-image._2 {
-background-image: url("/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
+background-image: url("/DependanceStudio/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
 }
 .double-quad.parallax-image._3 {
-background-image: url("/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
+background-image: url("/DependanceStudio/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
 }
 .double-quad.parallax-image.no-img {
 background-image: none;
 }
 .double-quad.parallax-image.regal {
-background-image: url("/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
+background-image: url("/DependanceStudio/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
 }
 .double-quad.no-radius {
 border-radius: 0;
@@ -2377,7 +2377,7 @@ object-fit: cover;
   overflow: clip;
 }
 .rectangle-double-height.parallax-image {
-background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2385,16 +2385,16 @@ background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   min-height: 52svh;
 }
 .rectangle-double-height.parallax-image._2 {
-background-image: url("/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
+background-image: url("/DependanceStudio/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
 }
 .rectangle-double-height.parallax-image._3 {
-background-image: url("/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
+background-image: url("/DependanceStudio/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
 }
 .rectangle-double-height.parallax-image.no-img {
 background-image: none;
 }
 .rectangle-double-height.parallax-image.regal {
-background-image: url("/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
+background-image: url("/DependanceStudio/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
 }
 .rectangle-double-height._80 {
 aspect-ratio: 2 / 3;
@@ -3255,7 +3255,7 @@ aspect-ratio: 1;
   overflow: clip;
 }
 .rectangle-square.parallax-image {
-background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
+background-image: url("/DependanceStudio/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3263,16 +3263,16 @@ background-image: url("/assets/media/671654e8e5bc3f069eef2e9c_Rectangle-7.png");
   min-height: 52svh;
 }
 .rectangle-square.parallax-image._2 {
-background-image: url("/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
+background-image: url("/DependanceStudio/assets/media/671654e999e2feaa3f17911f_Rectangle-8.png");
 }
 .rectangle-square.parallax-image._3 {
-background-image: url("/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
+background-image: url("/DependanceStudio/assets/media/671654ea1ab0888cf09363c4_Rectangle-9.png");
 }
 .rectangle-square.parallax-image.no-img {
 background-image: none;
 }
 .rectangle-square.parallax-image.regal {
-background-image: url("/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
+background-image: url("/DependanceStudio/assets/media/67227bd1b586e8634536d175_Diffusers Outpaint.webp");
 }
 .rectangle-square.padding {
 padding-bottom: 10%;
