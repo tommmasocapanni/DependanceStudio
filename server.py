@@ -10,6 +10,13 @@ DATA_FILE = os.path.join(os.path.dirname(__file__), 'data', 'site-data.json')
 
 class Handler(http.server.SimpleHTTPRequestHandler):
 
+    def _normalize_path(self):
+        orig = self.path
+        if self.path.startswith('/DependanceStudio/'):
+            self.path = self.path[len('/DependanceStudio/'):] or '/'
+        if orig != self.path:
+            print(f"[NORMALIZE] '{orig}' -> '{self.path}'")
+
     def do_OPTIONS(self):
         self.send_response(204)
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -18,9 +25,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_POST(self):
+        self._normalize_path()
         parsed = urllib.parse.urlparse(self.path)
 
-        if parsed.path == '/api/save':
+        if parsed.path in ('/api/save', '/api/save.php'):
             length = int(self.headers.get('Content-Length', 0))
             body = self.rfile.read(length)
             try:
@@ -56,8 +64,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         return slugs
 
     def do_GET(self):
+        self._normalize_path()
         parsed = urllib.parse.urlparse(self.path)
-
 
         if parsed.path == '/api/load':
             try:
@@ -89,13 +97,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # Extensionless URL handling
         path_no_ext = parsed.path.rstrip('/')
         if path_no_ext and not os.path.splitext(path_no_ext)[1] and path_no_ext != '/':
-            # Check if it's a project slug → serve static projects/NAME.html
             slug = path_no_ext.lstrip('/')
             project_file = os.path.join(Handler.PROJECT_DIR, slug + '.html')
             if slug in self._get_project_slugs() and os.path.isfile(project_file):
                 self.path = '/projects/' + slug + '.html'
                 return super().do_GET()
-            # Check if /path.html exists in root
             local_path = os.path.join(os.getcwd(), slug + '.html')
             if os.path.isfile(local_path):
                 self.path = path_no_ext + '.html'
