@@ -57,7 +57,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
+        orig_path = self.path
 
+        # Strip /DependanceStudio/ prefix for local dev (matches GitHub Pages base path)
+        if self.path.startswith('/DependanceStudio/'):
+            self.path = self.path[len('/DependanceStudio/'):] or '/'
+
+        print(f"[DEBUG] orig={orig_path} -> path={self.path}")
+
+        # Re-parse after path modification
+        parsed = urllib.parse.urlparse(self.path)
 
         if parsed.path == '/api/load':
             try:
