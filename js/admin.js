@@ -179,7 +179,7 @@ function renderSidebar() {
   saveBtn.addEventListener('click', async () => {
     setStoredData(currentData);
     try {
-      const res = await fetch('/api/save.php', {
+      const res = await fetch('/api/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(currentData)
@@ -191,7 +191,7 @@ function renderSidebar() {
         alert('❌ Server error: ' + (result.error || 'unknown'));
       }
     } catch (err) {
-      alert('⚠️ Saved to browser only. Server not reachable.\nRun: php -S localhost:8000');
+      alert('⚠️ Saved to browser only. Server not reachable.\nRun: python3 server.py');
     }
   });
   const exportBtn = createElement('button', 'btn-sm', '⬇️ Export');
@@ -326,7 +326,7 @@ function renderDashboard() {
   saveBtn.addEventListener('click', async () => {
     setStoredData(currentData);
     try {
-      const res = await fetch('/api/save.php', {
+      const res = await fetch('/api/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(currentData)
@@ -334,7 +334,7 @@ function renderDashboard() {
       const result = await res.json();
       alert(result.ok ? '✅ Saved to server' : '❌ Server error: ' + (result.error || 'unknown'));
     } catch (err) {
-      alert('⚠️ Saved to browser only. Run: php -S localhost:8000');
+      alert('⚠️ Saved to browser only. Run: python3 server.py');
     }
   });
   actions.appendChild(saveBtn);
