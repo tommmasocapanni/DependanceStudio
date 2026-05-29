@@ -20,7 +20,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
 
-        if parsed.path == '/api/save':
+        if parsed.path in ('/api/save', '/api/save.php'):
             length = int(self.headers.get('Content-Length', 0))
             body = self.rfile.read(length)
             try:
