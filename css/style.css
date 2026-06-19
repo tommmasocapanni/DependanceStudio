@@ -911,6 +911,67 @@ width: 102%;
   max-width: 102%;
   height: 102%;
 }
+.card-work.under-building {
+  cursor: default;
+}
+.card-work.under-building .content,
+.card-work.under-building .canvas-wrap {
+  position: relative;
+}
+.wip-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.wip-overlay .wip-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.wip-overlay .wip-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: auto;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Roboto, sans-serif;
+  font-size: clamp(10px, 1.2vw, 20px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.wip-overlay canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+.wip-overlay .wip-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.wip-overlay .wip-label {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Roboto, sans-serif;
+  font-size: clamp(10px, 1.2vw, 20px);
+  font-weight: 400;
+  line-height: 1.2;
+}
 .cover.canvas-img.brright {
 filter: contrast(97%) brightness(130%);
 }
@@ -2008,6 +2069,11 @@ z-index: 0;
 }
 .cover2.umbria {
 background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+  background-position: 50%;
+  background-size: cover;
+}
+.cover2.nicole {
+background-image: url("/assets/media/nicole_sparvieri/Home_Nicole Sparvieri-Luxury Weddings.jpeg");
   background-position: 50%;
   background-size: cover;
 }
@@ -5284,4 +5350,62 @@ grid-area: 1 / 2 / 2 / 2;
 grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
+}
+
+/* =====  UNDER CONSTRUCTION PLACEHOLDER  ===== */
+.under-construction {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.under-construction .arm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 185%;
+  height: 16%;
+  overflow: hidden;
+  background-color: #F5C400;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #000 0px, #000 8px,
+    transparent 8px, transparent 40px
+  );
+}
+
+.under-construction .arm.left {
+  transform: translate(-50%, -50%) rotate(12deg);
+}
+
+.under-construction .arm.right {
+  transform: translate(-50%, -50%) rotate(-12deg);
+}
+
+.under-construction .arm .text-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.under-construction .arm.left .text-layer {
+  transform: rotate(-12deg);
+}
+
+.under-construction .arm.right .text-layer {
+  transform: rotate(12deg);
+}
+
+.under-construction .arm .text-layer span {
+  font-family: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 5px;
+  color: #000;
+  white-space: nowrap;
 }
