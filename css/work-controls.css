@@ -1,0 +1,248 @@
+/* --- Control bar --- */
+.work-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0.4%;
+  margin-bottom: 8px;
+}
+
+.filter-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'SF Pro Display', 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.filter-toggle-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* --- Show/Hide toggle --- */
+.toggle-toggle-text {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.toggle-label {
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+}
+.toggle-label.active {
+  color: #000;
+}
+.toggle-sep {
+  color: #ccc;
+  margin: 0 2px;
+}
+
+/* --- Layout: sidebar + grid --- */
+.work-layout {
+  display: flex;
+  width: 100%;
+  position: relative;
+  align-items: flex-start;
+}
+
+/* --- Sidebar --- */
+.filter-sidebar {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0;
+}
+
+.filter-sidebar.open {
+  width: 280px;
+  min-width: 280px;
+  opacity: 1;
+  padding-right: 48px;
+}
+
+/* --- Filter sections (inside sidebar) --- */
+.filter-sidebar .filter-section {
+  margin-bottom: 28px;
+}
+
+.filter-sidebar .filter-section-title {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-clear-btn {
+  cursor: pointer;
+  font-size: 13px;
+  color: #999;
+  line-height: 1;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+.filter-clear-btn:hover {
+  color: #000;
+}
+
+.filter-sidebar .filter-tag.active::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #999;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.filter-sidebar .filter-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.filter-sidebar .filter-tag {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  color: #000;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  border-radius: 0;
+  display: block;
+}
+
+.filter-sidebar .filter-tag:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.filter-sidebar .filter-tag.active {
+  color: #000;
+}
+
+.filter-sidebar .filter-tag.active:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.filter-sidebar .filter-tag .count {
+  color: #666;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.filter-sidebar .filter-tag:hover .count {
+  color: #fff;
+}
+
+.filter-sidebar .filter-tag.active .count {
+  color: #666;
+}
+
+.filter-sidebar .filter-tag.active:hover .count {
+  color: #fff;
+}
+
+/* --- Work grid (cards area) --- */
+.work-grid {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hide-mode .work-grid {
+  gap: 0;
+}
+
+/* --- Hide-mode list view --- */
+.card-work .content,
+.card-work .content-copy {
+  overflow: hidden;
+}
+
+.hide-mode .card-work {
+  height: auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-bottom: 1px solid #0003;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.hide-mode .card-work .content,
+.hide-mode .card-work .content-copy {
+  min-height: 0 !important;
+}
+
+.hide-mode.section-grid-work-view {
+  grid-row-gap: 0;
+}
+
+.hide-mode .row-double-work {
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  gap: 0 !important;
+  grid-row-gap: 0 !important;
+}
+
+.row-double-work {
+  grid-row-gap: 8px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .filter-sidebar.open {
+    width: 200px;
+    min-width: 200px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 478px) {
+  .filter-toggle-btn {
+    display: none;
+  }
+  .filter-sidebar {
+    display: none !important;
+  }
+  .work-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .work-layout {
+    flex-direction: column;
+  }
+}
