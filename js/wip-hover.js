@@ -24,6 +24,7 @@
       var slug = cardEl ? cardEl.getAttribute('data-slug') : '';
       var isCrc = img.alt.indexOf('CRC-POST') !== -1;
       var isCeralacca = slug === 'ceralacca';
+      var isValais = slug === 'valais';
       var siteUrl, fullUrl;
       if (isCeralacca) {
         siteUrl = 'instagram.com/ceralaccaroma';
@@ -31,6 +32,9 @@
       } else if (isCrc) {
         siteUrl = 'crcpost.it';
         fullUrl = 'https://www.crcpost.it/';
+      } else if (isValais) {
+        siteUrl = 'instagram.com/valaismineral';
+        fullUrl = 'https://www.instagram.com/valaismineral/';
       } else {
         siteUrl = 'nicolesparvieri.com/en';
         fullUrl = 'https://nicolesparvieri.com/en';
