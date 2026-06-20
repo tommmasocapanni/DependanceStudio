@@ -42,6 +42,7 @@
     gsap.killTweensOf(targets);
 
     if (show) {
+      workSection.classList.remove('hide-mode');
       gsap.to(targets, {
         height: function (i, el) {
           var h = el._origHeight;
@@ -65,7 +66,6 @@
         stagger: 0.05,
         overwrite: 'auto',
         onComplete: function () {
-          workSection.classList.remove('hide-mode');
           targets.forEach(function (el) {
             el.style.removeProperty('height');
             el.style.removeProperty('opacity');

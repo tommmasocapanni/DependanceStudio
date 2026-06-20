@@ -41,34 +41,31 @@ class Content {
 	 */
 	// Modifica del costruttore per utilizzare <img> invece di background-image
 	constructor(DOM_el) {
-		// Inizializzazione degli elementi DOM
 		this.DOM.el = DOM_el;
 		this.DOM.canvasWrap = this.DOM.el.querySelector('.canvas-wrap');
 		this.DOM.inner = this.DOM.el.querySelector('.content__inner');
 
-		// Trova l'elemento <img> e usa il suo src come sorgente immagine
+		if (!this.DOM.canvasWrap) return;
+
 		const imgElement = this.DOM.canvasWrap.querySelector('.canvas-img');
+		if (!imgElement) return;
 		this.imageSrc = imgElement.src;
 
-		// Creazione dell'elemento canvas e aggiunta alla canvasWrap
 		this.DOM.canvas = document.createElement('canvas');
 		this.DOM.canvasWrap.appendChild(this.DOM.canvas);
 
-		// Ottieni il contesto 2D del canvas
 		this.ctx = this.DOM.canvas.getContext('2d');
 
-		// Crea un oggetto Image e carica la sorgente dell'immagine
 		this.img = new Image();
 		this.img.src = this.imageSrc;
 
-		// Una volta che l'immagine è caricata, calcola e renderizza
 		this.img.onload = () => {
 			const imgWidth = this.img.width;
 			const imgHeight = this.img.height;
+			if (imgWidth === 0 || imgHeight === 0) return;
 			this.imgRatio = imgWidth / imgHeight;
 			this.setCanvasSize();
 			this.render();
-			// Imposta gli eventi
 			this.initEvents();
 		};
 	}
@@ -80,6 +77,8 @@ class Content {
 	 * effect when the image enters the viewport.
 	 */
 	initEvents() {
+		if (!this.DOM.canvasWrap) return;
+
 		// Resize event handler
 		window.addEventListener('resize', () => {
 			this.setCanvasSize();
@@ -98,18 +97,20 @@ class Content {
 		});
 
 		// Add parallax effect to titles
-		gsap.timeline({
-			scrollTrigger: {
-				trigger: this.DOM.el,
-				start: 'top bottom',
-				end: 'bottom top',
-				scrub: true
-			}
-		})
-		.to(this.DOM.inner, {
-			ease: 'none',
-			yPercent: -100
-		});
+		if (this.DOM.inner) {
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: this.DOM.el,
+					start: 'top bottom',
+					end: 'bottom top',
+					scrub: true
+				}
+			})
+			.to(this.DOM.inner, {
+				ease: 'none',
+				yPercent: -100
+			});
+		}
 
 		// show canvasWrap when the element enters the viewport
         ScrollTrigger.create({
@@ -129,8 +130,10 @@ class Content {
 	 * of the canvasWrap element.
 	 */
 	setCanvasSize() {
-		const dpr = window.devicePixelRatio || 1;
+		if (!this.DOM.canvasWrap || !this.DOM.canvas) return;
 		const rect = this.DOM.canvasWrap.getBoundingClientRect();
+		if (rect.width === 0 || rect.height === 0) return;
+		const dpr = window.devicePixelRatio || 1;
 		this.DOM.canvas.width = rect.width * dpr;
 		this.DOM.canvas.height = rect.height * dpr;
 		this.DOM.canvas.style.width = rect.width + 'px';
@@ -144,6 +147,8 @@ class Content {
 	render() {
 		const w = this.DOM.canvas.width;
 		const h = this.DOM.canvas.height;
+
+		if (w === 0 || h === 0) return;
 	
 		// Calculate the dimensions and position for rendering the image 
 		// within the canvas based on the image aspect ratio.
