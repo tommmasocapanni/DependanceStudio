@@ -20,9 +20,21 @@
       var canvas = document.createElement('canvas');
       var ctx = canvas.getContext('2d');
 
+      var cardEl = contentEl.closest('.under-building');
+      var slug = cardEl ? cardEl.getAttribute('data-slug') : '';
       var isCrc = img.alt.indexOf('CRC-POST') !== -1;
-      var siteUrl = isCrc ? 'crcpost.it' : 'nicolesparvieri.com/en';
-      var fullUrl = isCrc ? 'https://www.crcpost.it/' : 'https://nicolesparvieri.com/en';
+      var isCeralacca = slug === 'ceralacca';
+      var siteUrl, fullUrl;
+      if (isCeralacca) {
+        siteUrl = 'instagram.com/ceralaccaroma';
+        fullUrl = 'https://www.instagram.com/ceralaccaroma/';
+      } else if (isCrc) {
+        siteUrl = 'crcpost.it';
+        fullUrl = 'https://www.crcpost.it/';
+      } else {
+        siteUrl = 'nicolesparvieri.com/en';
+        fullUrl = 'https://nicolesparvieri.com/en';
+      }
 
       var label = document.createElement('div');
       label.className = 'wip-label';
@@ -89,8 +101,7 @@
           timer = setTimeout(depixelate, 80);
         }
 
-        var card = contentEl.closest('.under-building');
-        card.addEventListener('mouseenter', function(){
+        cardEl.addEventListener('mouseenter', function(){
           if (timer) clearTimeout(timer);
           pxIndex = pxValues.length - 1;
           overlay.style.opacity = 1;
@@ -98,7 +109,7 @@
           pixelate();
         });
 
-        card.addEventListener('mouseleave', function(){
+        cardEl.addEventListener('mouseleave', function(){
           if (timer) clearTimeout(timer);
           pxIndex = 0;
           depixelate();

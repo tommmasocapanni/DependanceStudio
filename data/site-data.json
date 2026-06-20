@@ -13,7 +13,7 @@
     "sections": {
       "work": {
         "title": "Work",
-        "count": 10,
+        "count": 16,
         "subtitle": "Digital design for every dimension.",
         "note": "Scroll for a selection of recent projects."
       },
@@ -237,7 +237,10 @@
       "year": "2024",
       "location": "Rome, IT",
       "client": "What! Studio",
-      "tags": ["Website", "Branding"],
+      "tags": [
+        "Website",
+        "Branding"
+      ],
       "description": "",
       "image": "",
       "content": ""
@@ -248,7 +251,54 @@
       "year": "2024",
       "location": "Rome, IT",
       "client": "Middle Studio",
-      "tags": ["Website", "Luxury"],
+      "tags": [
+        "Website",
+        "Luxury"
+      ],
+      "description": "",
+      "image": "",
+      "content": ""
+    },
+    {
+      "slug": "urban-vision",
+      "title": "Urban Vision // Urban Heart",
+      "year": "2026",
+      "location": "",
+      "client": "Urban Vision",
+      "tags": [
+        "new",
+        "exhibit",
+        "led-wall",
+        "visual"
+      ],
+      "description": "",
+      "image": "",
+      "content": ""
+    },
+    {
+      "slug": "ceralacca",
+      "title": "Ceralacca",
+      "year": "2026",
+      "location": "",
+      "client": "Familiar",
+      "tags": [
+        "Website"
+      ],
+      "description": "",
+      "image": "",
+      "content": ""
+    },
+    {
+      "slug": "valais",
+      "title": "Valais",
+      "year": "2026",
+      "location": "",
+      "client": "Middle Studio",
+      "tags": [
+        "social",
+        "motion",
+        "branding"
+      ],
       "description": "",
       "image": "",
       "content": ""
