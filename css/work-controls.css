@@ -349,4 +349,14 @@
   .work-layout {
     flex-direction: column;
   }
+  #WORK .title-card-work,
+  #WORK .text-57 {
+    font-size: 12px;
+  }
+  .hide-mode .work-grid {
+    gap: 4px;
+  }
+  .hide-mode .row-double-work {
+    grid-row-gap: 4px !important;
+  }
 }
