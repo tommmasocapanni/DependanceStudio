@@ -233,7 +233,11 @@ const initSmoothScrolling = () => {
 
 // .content elements
 const contentElems = [...document.querySelectorAll('.content')];
-contentElems.forEach(el => new Content(el));
+window.__contentInstances = new Map();
+contentElems.forEach(el => {
+  var c = new Content(el);
+  window.__contentInstances.set(el, c);
+});
 
 // smooth scrolling with Lenis
 initSmoothScrolling();

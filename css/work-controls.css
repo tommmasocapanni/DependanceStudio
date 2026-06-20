@@ -81,7 +81,7 @@
 
 .filter-sidebar .filter-section-title {
   font-family: 'Roboto Mono', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -123,12 +123,12 @@
 
 .filter-sidebar .filter-tag {
   font-family: 'Roboto Mono', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: -0.02em;
   cursor: pointer;
   color: #000;
   transition: background-color 0.2s ease, color 0.2s ease;
-  padding: 2px 4px;
+  /* padding: 2px 4px; */
   border: none;
   background: none;
   border-radius: 0;
@@ -167,6 +167,48 @@
   color: #fff;
 }
 
+/* --- Card title / client font --- */
+#WORK .section-title-work.static._w-other {
+  pointer-events: none;
+}
+
+#WORK .title-card-work,
+#WORK .text-57 {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* --- Single-row project info (title + subtitle + tags) --- */
+#WORK .box-text-4 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#WORK .frame-59 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  width: auto;
+}
+
+#WORK .tag-row-cont {
+  width: 34%;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+#WORK .second-row-subtitle {
+  flex: 1;
+}
+
+#WORK .title-card-work {
+  flex: 1;
+}
+
 /* --- Work grid (cards area) --- */
 .work-grid {
   flex: 1;
@@ -193,8 +235,9 @@
   width: 100% !important;
   max-width: 100% !important;
   border-bottom: 1px solid #0003;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  /* padding-top: 1%; */
+  /* padding-bottom: 1%; */
+  row-gap: 0px;
 }
 
 .hide-mode .card-work .content,

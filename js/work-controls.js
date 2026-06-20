@@ -210,29 +210,21 @@
   function projectMatches(project) {
     if (!hasActiveFilters()) return true;
 
-    var matchFound = false;
-
     if (activeFilters.tags.length > 0) {
-      if (project.tags && project.tags.some(function (t) {
+      if (!(project.tags && project.tags.some(function (t) {
         return activeFilters.tags.indexOf(t) !== -1;
-      })) {
-        matchFound = true;
-      }
+      }))) return false;
     }
 
     if (activeFilters.years.length > 0) {
-      if (activeFilters.years.indexOf(project.year) !== -1) {
-        matchFound = true;
-      }
+      if (activeFilters.years.indexOf(project.year) === -1) return false;
     }
 
     if (activeFilters.locations.length > 0) {
-      if (activeFilters.locations.indexOf(project.location) !== -1) {
-        matchFound = true;
-      }
+      if (activeFilters.locations.indexOf(project.location) === -1) return false;
     }
 
-    return matchFound;
+    return true;
   }
 
   function getProjectBySlug(slug) {
@@ -303,6 +295,15 @@
           overwrite: 'auto'
         });
         visibleCount++;
+
+        // Trigger pixel animation if content was hidden
+        var contentEl = card.querySelector('.content');
+        if (contentEl && window.__contentInstances) {
+          var ci = window.__contentInstances.get(contentEl);
+          if (ci && ci.pxIndex < ci.pxFactorValues.length - 1) {
+            ci.animatePixels();
+          }
+        }
       } else {
         card.style.display = 'none';
         card.style.pointerEvents = 'none';
