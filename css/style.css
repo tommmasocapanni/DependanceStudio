@@ -4037,7 +4037,7 @@ z-index: 1;
 margin-top: 2svh;
 }
 .section-grid-work-view {
-grid-row-gap: 16px;
+/* grid-row-gap: 16px; */
 }
 .section-title-work.static._w-other {
 z-index: 0;
