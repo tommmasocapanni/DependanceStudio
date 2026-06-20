@@ -353,6 +353,9 @@
   #WORK .text-57 {
     font-size: 12px;
   }
+  .work-grid {
+    gap: 8px;
+  }
   .hide-mode .work-grid {
     gap: 4px;
   }
