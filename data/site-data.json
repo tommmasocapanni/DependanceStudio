@@ -79,9 +79,9 @@
       "client": "Visual ID",
       "tags": [
         "3D Motion",
-        "Social",
-        "Visual",
-        "Graphic Design",
+        "social",
+        "visual",
+        "graphic design",
         "new"
       ],
       "description": "A moving visual piece for a contemporary dance project, merging animation with cinematic audio-visual storytelling.",
@@ -124,7 +124,7 @@
       "client": "Involve Records",
       "tags": [
         "3D Motion",
-        "Graphic Design"
+        "graphic design"
       ],
       "description": "A strong visual campaign for a record label and music release.",
       "image": "/assets/media/6717c94faa2fc79a9e704848_Diffusers-Image-Outpaint.webp",
@@ -224,7 +224,7 @@
       "location": "Rome, IT",
       "client": "Personal Project",
       "tags": [
-        "Exhibit",
+        "exhibit",
         "AV"
       ],
       "description": "A generative and immersive installation that explores memory through digital visuals.",
@@ -239,7 +239,7 @@
       "client": "What! Studio",
       "tags": [
         "Website",
-        "Branding"
+        "branding"
       ],
       "description": "",
       "image": "",
@@ -282,7 +282,9 @@
       "location": "",
       "client": "Familiar",
       "tags": [
-        "Website"
+        "efx",
+        "social",
+        "visual"
       ],
       "description": "",
       "image": "",
