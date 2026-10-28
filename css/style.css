@@ -917,6 +917,8 @@ width: 102%;
   height: 102%;
 }
 .card-work.under-building {
+  cursor: pointer;
+}
   cursor: default;
 }
 .card-work.under-building .content,
@@ -1532,21 +1534,21 @@ background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.web
 }
 .rectangle-7.parallax-image.umbria---hero {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96bc0d2ae8cd0b2579a_foglie.webp");
+  background-image: url("/assets/media/crc-post-azienda.jpg");
 }
 .rectangle-7.parallax-image.umbria---hero.charta-pics {
 background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.umbria-1 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+  background-image: url("/assets/media/crc-post-chi2.jpg");
 }
 .rectangle-7.parallax-image.umbria-1.charta-pics {
 background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
 }
 .rectangle-7.parallax-image.umbria-2 {
 aspect-ratio: 3 / 2;
-  background-image: url("/assets/media/6745e96d503b574d4b7e9e81_sistemazioni.webp");
+  background-image: url("/assets/media/crc-post-cards.jpg");
 }
 .rectangle-7.parallax-image.umbria-2.charta-pics {
 background-image: url("/assets/media/673b7985a92d627fb2ce91ad_charta-sala1_2.webp");
@@ -2074,7 +2076,10 @@ z-index: 0;
   position: relative;
 }
 .cover2.umbria {
-background-image: url("/assets/media/6745e96bd9f60125337d709c_485_2x_shots_so.webp");
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
   background-position: 50%;
   background-size: cover;
 }

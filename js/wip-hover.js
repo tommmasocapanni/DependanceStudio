@@ -22,16 +22,16 @@
 
       var cardEl = contentEl.closest('.under-building');
       var slug = cardEl ? cardEl.getAttribute('data-slug') : '';
-      var isCrc = img.alt.indexOf('CRC-POST') !== -1;
+      var isCrc = slug === 'crc-post';
       var isCeralacca = slug === 'ceralacca';
       var isValais = slug === 'valais';
-      var siteUrl, fullUrl;
-      if (isCeralacca) {
+      var target = '_blank';      if (isCeralacca) {
         siteUrl = 'instagram.com/ceralaccaroma';
         fullUrl = 'https://www.instagram.com/ceralaccaroma/';
       } else if (isCrc) {
-        siteUrl = 'crcpost.it';
-        fullUrl = 'https://www.crcpost.it/';
+        siteUrl = 'crc-post';
+        fullUrl = '/projects/crc-post.html';
+        target = '_self';
       } else if (isValais) {
         siteUrl = 'instagram.com/valaismineral';
         fullUrl = 'https://www.instagram.com/valaismineral/';
@@ -40,12 +40,7 @@
         fullUrl = 'https://nicolesparvieri.com/en';
       }
 
-      var label = document.createElement('div');
-      label.className = 'wip-label';
-      label.innerHTML = 'WORK IN PROGRESS<br><a href="' + fullUrl + '" target="_blank" class="wip-link">' + siteUrl + '</a>';
-
       overlay.appendChild(canvas);
-      overlay.appendChild(label);
       wrap.appendChild(overlay);
 
       var image = new Image();
@@ -119,7 +114,10 @@
           depixelate();
         });
 
-        window.addEventListener('resize', setCanvasSize);
+        cardEl.addEventListener('click', function(e){
+          if (e.target && e.target.classList && e.target.classList.contains('wip-link')) return;
+          if (isCrc) window.location.href = fullUrl;
+        });
         setCanvasSize();
         render();
       };
